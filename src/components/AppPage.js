@@ -1,14 +1,20 @@
 // src/components/AppPage.js
 import React, { useState, useEffect } from "react";
-import AppIcon from "./AppIcon";
-import iconData from "../data/iconData";
-import calculateGap from "../utils/calculateGap"; // Adjust the import path if necessary
+import SwipeableViews from "react-swipeable-views";
+import IconPage from "./IconPage";
+import { pageIcons } from "../data/iconData";
+import calculateIconsPerPage from "../utils/calculateIconsPerPage"; // Import the new function
 
 const AppPage = () => {
-  const [gap, setGap] = useState(calculateGap(window.innerWidth));
+  const [iconsPerPage, setIconsPerPage] = useState(
+    calculateIconsPerPage(window.innerWidth, window.innerHeight)
+  );
+  const pages = Math.ceil(pageIcons.length / iconsPerPage);
 
   const handleResize = () => {
-    setGap(calculateGap(window.innerWidth));
+    setIconsPerPage(
+      calculateIconsPerPage(window.innerWidth, window.innerHeight)
+    );
   };
 
   useEffect(() => {
@@ -19,19 +25,16 @@ const AppPage = () => {
   }, []);
 
   return (
-    <div
-      className="flex flex-wrap justify-center items-center pt-4 px-2"
-      style={{ gap: `${gap}rem` }}
-    >
-      {iconData.map((icon, index) => (
-        <AppIcon
-          key={index}
-          icon={icon.imgSrc}
-          label={icon.label}
-          url={icon.url}
-        />
-      ))}
-    </div>
+    <SwipeableViews>
+      {Array.from({ length: pages }).map((_, pageIndex) => {
+        const icons = pageIcons.slice(
+          // Update to use pageIcons
+          pageIndex * iconsPerPage,
+          (pageIndex + 1) * iconsPerPage
+        );
+        return <IconPage key={pageIndex} icons={icons} />;
+      })}
+    </SwipeableViews>
   );
 };
 

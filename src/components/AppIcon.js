@@ -8,19 +8,21 @@ function AppIcon({ icon, label, url, inDock }) {
       className={`app-icon flex flex-col items-center w-20 ${
         inDock
           ? ""
-          : "bg-gray-300 bg-opacity-20 hover:bg-gray-400 hover:bg-opacity-40"
-      } rounded-lg p-2 transition duration-200 ease-in transform hover:scale-105`}
+          : " hover:bg-gray-300 hover:bg-opacity-20"
+      } rounded-lg p-2 transition duration-300 ease-in-out transform hover:scale-105`}
       target="_blank"
       rel="noopener noreferrer"
     >
       <img
         src={icon}
         alt={`${label} icon`}
-        className="app-icon-image rounded-md w-16 h-16"
+        className="app-icon-image rounded-lg w-16 h-16"
       />
-      <div className="app-icon-label text-white mt-2 text-xs truncate w-16">
-        {label}
-      </div>
+      {!inDock && (
+        <div className="app-icon-label text-white mt-2 text-xs truncate w-16">
+          {label}
+        </div>
+      )}
     </a>
   );
 }
