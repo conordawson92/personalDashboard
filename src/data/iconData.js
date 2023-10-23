@@ -25,6 +25,36 @@ const iconData = [
     url: "https://www.google.com/",
   },
   {
+    label: "Youtube",
+    imgSrc: process.env.PUBLIC_URL + "/assets/images/youtube.png",
+    url: "https://www.youtube.com/",
+  },
+  {
+    label: "Linkedin",
+    imgSrc: process.env.PUBLIC_URL + "/assets/images/linkedin.png",
+    url: "https://www.linkedin.com/nhome/",
+  },
+  {
+    label: "Coque",
+    imgSrc: process.env.PUBLIC_URL + "/assets/images/coque.png",
+    url: "https://coque.lu/en/le-centre-aquatique/facilities",
+  },
+  {
+    label: "Netflix",
+    imgSrc: process.env.PUBLIC_URL + "/assets/images/netflix.png",
+    url: "https://www.netflix.com/browse",
+  },
+  {
+    label: "BBC Weather",
+    imgSrc: process.env.PUBLIC_URL + "/assets/images/weather.png",
+    url: "https://www.bbc.com/weather/2960316",
+  },
+  {
+    label: "Hamster",
+    imgSrc: process.env.PUBLIC_URL + "/assets/images/x.png",
+    url: "https://xhamster.com/",
+  },
+  {
     label: "GPT",
     imgSrc: process.env.PUBLIC_URL + "/assets/images/gpt.png",
     url: "https://chat.openai.com/",
@@ -33,11 +63,6 @@ const iconData = [
     label: "Phind",
     imgSrc: process.env.PUBLIC_URL + "/assets/images/phind.svg",
     url: "https://www.phind.com/",
-  },
-  {
-    label: "Youtube",
-    imgSrc: process.env.PUBLIC_URL + "/assets/images/youtube.png",
-    url: "https://www.youtube.com/",
   },
   {
     label: "Orange",

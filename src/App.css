@@ -27,3 +27,15 @@
   left: 0;
   background-color: rgba(21, 58, 18, 0.5); /* Adjust the 0.5 value to make it darker or lighter */
 }
+.loading-screen {
+  position: fixed; /* Fixed position */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; /* Make it cover the entire viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9); /* Optional: Background color with opacity */
+  z-index: 9999; /* High z-index so it's on top of everything else */
+}
